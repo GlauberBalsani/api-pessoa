@@ -9,6 +9,8 @@ public record AddressDTO(
         @NotNull
         String street,
         @NotNull
+        String number,
+        @NotNull
         String city,
         @NotNull
         String state,
@@ -19,6 +21,7 @@ public record AddressDTO(
         return new AddressDTO(
                 address.getId(),
                 address.getStreet(),
+                address.getNumber(),
                 address.getCity(),
                 address.getState(),
                 address.getZipCode()

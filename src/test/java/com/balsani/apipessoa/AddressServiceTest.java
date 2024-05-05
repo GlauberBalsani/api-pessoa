@@ -39,7 +39,7 @@ public class AddressServiceTest {
 
     @Test
     public void testCreateAddress() {
-        AddressDTO addressDTO = new AddressDTO(null, "Street", "City", "State", "12345");
+        AddressDTO addressDTO = new AddressDTO(null, "Street", "Number", "City", "State", "12345");
         Person person = new Person();
         when(personRepository.findById(1L)).thenReturn(Optional.of(person));
         when(addressRepository.save(any(Address.class))).thenAnswer(invocation -> invocation.getArgument(0));
@@ -47,6 +47,7 @@ public class AddressServiceTest {
         AddressDTO result = addressService.createAddress(1L, addressDTO);
 
         assertEquals("Street", result.street());
+        assertEquals("Number", result.number());
         assertEquals("City", result.city());
         assertEquals("State", result.state());
         assertEquals("12345", result.zipCode());
@@ -58,6 +59,7 @@ public class AddressServiceTest {
         Address address = new Address();
         address.setId(1L);
         address.setStreet("Street");
+        address.setNumber("Number");
         address.setCity("City");
         address.setState("State");
         address.setZipCode("12345");
@@ -68,13 +70,11 @@ public class AddressServiceTest {
 
         assertEquals(address.getId(), result.id());
         assertEquals(address.getStreet(), result.street());
+        assertEquals(address.getNumber(), result.number());
         assertEquals(address.getCity(), result.city());
         assertEquals(address.getState(), result.state());
         assertEquals(address.getZipCode(), result.zipCode());
     }
-
-
-
 
     @Test
     public void testDeleteAddress() {

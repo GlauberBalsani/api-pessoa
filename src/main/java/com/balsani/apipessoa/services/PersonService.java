@@ -2,7 +2,7 @@ package com.balsani.apipessoa.services;
 
 import com.balsani.apipessoa.domain.models.Person;
 import com.balsani.apipessoa.domain.models.dto.PersonDTO;
-import com.balsani.apipessoa.domain.models.dto.PersonResponseDTO;
+
 import com.balsani.apipessoa.exceptions.ResourceNotFoundException;
 import com.balsani.apipessoa.repository.AddressRepository;
 import com.balsani.apipessoa.repository.PersonRepository;
@@ -36,11 +36,11 @@ public class PersonService {
         return PersonDTO.fromEntity(personSaved);
     }
 
-    public List<PersonResponseDTO> getAll() {
+    public List<PersonDTO> getAll() {
         return personRepository
                 .findAll()
                 .stream()
-                .map(person -> new PersonResponseDTO(
+                .map(person -> new PersonDTO(
                         person.getId(),
                         person.getName(),
                         person.getBirthDate()))

@@ -25,12 +25,12 @@ public class AddressService {
     public AddressDTO createAddress(Long personId, AddressDTO addressRequestDTO) {
         Person person = personRepository.findById(personId)
                 .orElseThrow(() -> new ResourceNotFoundException("Person with id " + personId + " not found"));
-        Address address = new Address(
-                addressRequestDTO.street(),
-                addressRequestDTO.city(),
-                addressRequestDTO.state(),
-                addressRequestDTO.zipCode()
-        );
+        Address address = new Address();
+        address.setStreet(addressRequestDTO.street());
+        address.setCity(addressRequestDTO.city());
+        address.setNumber(addressRequestDTO.number());
+        address.setState(addressRequestDTO.state());
+        address.setZipCode(addressRequestDTO.zipCode());
         if(person.getMainAddress() == null) {
             person.setMainAddress(address);
         }
@@ -38,6 +38,7 @@ public class AddressService {
         address = addressRepository.save(address);
         return AddressDTO.fromModel(address);
     }
+
 
 
     public AddressDTO getAddressById(Long id) {

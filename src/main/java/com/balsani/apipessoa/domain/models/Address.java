@@ -12,6 +12,8 @@ public class Address {
     private Long id;
     @Column(name = "street", nullable = false)
     private String street;
+    @Column(name = "number")
+    private String number;
     @Column(name = "city", nullable = false)
     private String city;
     @Column(name = "state", nullable = false)
@@ -28,12 +30,7 @@ public class Address {
     public Address() {
     }
 
-    public Address(String street, String city, String state, String zipCode) {
-        this.street = street;
-        this.city = city;
-        this.state = state;
-        this.zipCode = zipCode;
-    }
+
 
     public Long getId() {
         return id;
@@ -49,6 +46,14 @@ public class Address {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getNumber() {
+        return number;
     }
 
     public String getCity() {

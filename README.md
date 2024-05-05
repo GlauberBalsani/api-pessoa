@@ -26,6 +26,7 @@ Acessar `http://localhost:8080/swagger-ui.html`
       "mainAddress": {
         "id": 1,
         "street": "Rua das Flores",
+        "number": "1234",
         "city": "São Paulo",
         "state": "SP",
         "zipCode": "01234-567"
@@ -34,6 +35,7 @@ Acessar `http://localhost:8080/swagger-ui.html`
         {
           "id": 1,
           "street": "Rua das Flores",
+          "number": "1234",
           "city": "São Paulo",
           "state": "SP",
           "zipCode": "01234-567"
@@ -41,6 +43,7 @@ Acessar `http://localhost:8080/swagger-ui.html`
         {
           "id": 2,
           "street": "Rua das Pedras",
+          "number": "1234",
           "city": "São Paulo",
           "state": "SP",
           "zipCode": "01234-567"
@@ -59,6 +62,7 @@ Acessar `http://localhost:8080/swagger-ui.html`
     ```json
     {
       "street": "Rua das Flores",
+      "number": "1234",
       "city": "São Paulo",
       "state": "SP",
       "zipCode": "01234-567"

@@ -3,7 +3,7 @@ package com.balsani.apipessoa.controller;
 import com.balsani.apipessoa.domain.models.Person;
 import com.balsani.apipessoa.domain.models.dto.AddressDTO;
 import com.balsani.apipessoa.domain.models.dto.PersonDTO;
-import com.balsani.apipessoa.domain.models.dto.PersonResponseDTO;
+
 import com.balsani.apipessoa.services.PersonService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -33,8 +33,8 @@ public class PersonController {
     }
 
     @GetMapping
-    public ResponseEntity<List<PersonResponseDTO>> getAll() {
-        List<PersonResponseDTO> persons = personService.getAll();
+    public ResponseEntity<List<PersonDTO>> getAll() {
+        List<PersonDTO> persons = personService.getAll();
         return ResponseEntity.ok(persons);
     }
 
