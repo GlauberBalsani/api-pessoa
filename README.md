@@ -1,6 +1,7 @@
 # API Pessoa
 
 Esta API é usada para gerenciar pessoas e seus endereços.
+Acessar `http://localhost:8080/swagger-ui.html`
 
 ## Endpoints
 

@@ -86,18 +86,7 @@ public class PersonService {
     }
 
 
-    @Transactional
-    public void setMainAddress(Long userId, Long addressId) {
-        var person = personRepository.findById(userId);
-        if (!person.isPresent()) {
-            throw new ResourceNotFoundException("Person with id " + userId + " not found");
-        }
-        var address = addressRepository.findById(addressId);
-        if (!address.isPresent()) {
-            throw new ResourceNotFoundException("Address with id " + addressId + " not found");
-        }
-        person.get().setMainAddress(address.get());
-    }
+
 
 
 }

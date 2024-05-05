@@ -31,10 +31,14 @@ public class AddressService {
                 addressRequestDTO.state(),
                 addressRequestDTO.zipCode()
         );
+        if(person.getMainAddress() == null) {
+            person.setMainAddress(address);
+        }
         address.setPerson(person);
         address = addressRepository.save(address);
         return AddressDTO.fromModel(address);
     }
+
 
     public AddressDTO getAddressById(Long id) {
         Address address = addressRepository.findById(id)

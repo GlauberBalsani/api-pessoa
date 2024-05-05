@@ -59,10 +59,6 @@ public class PersonController {
 
 
 
-    @PutMapping("/{userId}/address/{addressId}")
-    public ResponseEntity<Void> setMainAddress(@PathVariable Long userId, @PathVariable Long addressId) {
-        personService.setMainAddress(userId, addressId);
-        return ResponseEntity.noContent().build();
-    }
+
 
 }
